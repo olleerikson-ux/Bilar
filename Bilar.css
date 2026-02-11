@@ -15,15 +15,18 @@ body, html {
     }
     
     .bakgrundsbild1 {
-    background-image: url("bilder/baloonfield.jpg");
+    background-image: url("Image1.jpg");
     min-height: 500px;
     opacity: 0.80;
     }
     
     .bakgrundsbild2 {
-    background-image: url("bilder/model-face.jpg");
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 400px;
-    opacity: 0.80;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
     
     .bakgrundsbild3 {
@@ -48,6 +51,15 @@ body, html {
     text-align: center;
     font-size: 30px;
     color: rgba(0,0,0,1.00);
+    }
+    
+    .infobox-gradient {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: rgba(255,255,255,1.00);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    padding: 40px 20px;
     }
     
     .textbox1 {
@@ -76,5 +88,9 @@ body, html {
     @media only screen and (max-device-width: 1024px) {
     .bakgrundsbild1, .bakgrundsbild2, .bakgrundsbild3 {
     background-attachment: scroll;
+    }
+    
+    .textbox1 {
+    padding: 30px 30px;
     }
     }
