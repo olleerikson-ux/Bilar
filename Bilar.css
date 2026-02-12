@@ -4,7 +4,19 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     color: rgba(0,0,0,0.90);
     font-size: 16px;
+    line-height: 1.6;
     }
+
+    .knapp {
+        margin-top: 25px;
+        opacity: 0.6;
+        display: inline-block;
+        background-color: rgb(0, 0, 255);
+        color: white;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 8px;
+      }      
     
     .bakgrundsbild1, .bakgrundsbild2, .bakgrundsbild3 {
     position: relative;
@@ -21,7 +33,7 @@ body, html {
     }
     
     .bakgrundsbild2 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     min-height: 400px;
     opacity: 1;
     display: flex;
@@ -32,65 +44,138 @@ body, html {
     .bakgrundsbild3 {
     background-image: url("bilder/relaxing.jpg");
     min-height: 400px;
-    opacity: 0.70;
+    opacity: 0.75;
     }
     
     .headerbox {
     width: 100%;
     text-align: center;
     font-size: 50px;
-    padding: 10px 0;
-    background-color: rgba(255,255,255,1);
+    padding: 20px 0;
+    background-color: rgba(15, 52, 96, 1);
+    color: rgba(255,255,255,0.95);
+    font-weight: 700;
+    letter-spacing: 8px;
     }
     
     .infobox {
     position: absolute;
     left: 0;
-    top: 30%;
+    top: 35%;
     width: 100%;
     text-align: center;
-    font-size: 30px;
-    color: rgba(0,0,0,1.00);
+    color: rgba(255,255,255,0.95);
+    padding: 0 20px;
+    }
+    
+    .infobox h1 {
+    font-size: 48px;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    }
+    
+    .infobox h2 {
+    font-size: 36px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .infobox p {
+    font-size: 24px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     
     .infobox-gradient {
     width: 100%;
     text-align: center;
-    font-size: 40px;
     color: rgba(255,255,255,1.00);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     padding: 40px 20px;
     }
     
+    .infobox-gradient h2 {
+    font-size: 48px;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .infobox-gradient p {
+    font-size: 24px;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
     .textbox1 {
-    padding: 30px 200px;
+    padding: 50px 200px;
     text-align: justify;
     background-color:rgba(255,255,255,1.00);
-    border-top: 1px solid rgba(0,0,0,0.20);
-    border-bottom: 1px solid rgba(0,0,0,0.20);
+    border-top: 3px solid rgba(15, 52, 96, 0.3);
+    border-bottom: 3px solid rgba(15, 52, 96, 0.3);
+    }
+    
+    .textbox1 h2 {
+    color: rgba(15, 52, 96, 1);
+    margin-bottom: 25px;
     }
     
     .textbox2 {
-    text-align: center;
     color: rgba(255,255,255,0.90);
-    padding: 30px 30px;
+    padding: 50px 200px;
     text-align: justify;
-    background-color: rgba(0,0,0,1.00);
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    }
+    
+    .textbox2 h2 {
+    text-align: center;
+    margin-bottom: 25px;
     }
     
     .textbox3 {
-    text-align: center;
     color: rgba(255,255,255,0.90);
-    padding: 30px 30px;
+    padding: 50px 200px;
     text-align: justify;
-    background-color: rgba(0,0,0,1.00);
+    background-color: rgba(26, 26, 46, 1.00);
     }
+    
+    .textbox3 h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    }
+    
     @media only screen and (max-device-width: 1024px) {
     .bakgrundsbild1, .bakgrundsbild2, .bakgrundsbild3 {
     background-attachment: scroll;
     }
     
-    .textbox1 {
+    .textbox1, .textbox2, .textbox3 {
     padding: 30px 30px;
+    }
+    
+    .headerbox {
+    font-size: 36px;
+    letter-spacing: 4px;
+    }
+    
+    .infobox h1 {
+    font-size: 32px;
+    }
+    
+    .infobox h2 {
+    font-size: 28px;
+    }
+    
+    .infobox p {
+    font-size: 18px;
+    }
+    
+    .infobox-gradient h2 {
+    font-size: 32px;
+    }
+    
+    .infobox-gradient p {
+    font-size: 18px;
     }
     }
