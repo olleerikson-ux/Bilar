@@ -1,53 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
 body, html {
-    height: 100vh;
+    height: 100%;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: rgba(0,0,0,0.90);
     font-size: 16px;
     line-height: 1.6;
-    }
+    scroll-behavior: smooth;
+}
 
-    .knapp {
-        margin-top: 25px;
-        opacity: 0.6;
-        display: inline-block;
-        background-color: rgb(0, 0, 255);
-        color: white;
-        padding: 5px 10px;
-        text-decoration: none;
-        border-radius: 8px;
-      }      
-    
-    .bakgrundsbild1, .bakgrundsbild2, .bakgrundsbild3 {
-    position: relative;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    }
-    
-    .bakgrundsbild1 {
-    background-image: url("Image1.jpg");
-    min-height: 500px;
-    opacity: 0.80;
-    }
-    
-    .bakgrundsbild2 {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    min-height: 400px;
-    opacity: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
-    
-    .bakgrundsbild3 {
-    background-image: url("bilder/relaxing.jpg");
-    min-height: 400px;
-    opacity: 0.75;
-    }
-    
-    .headerbox {
+/* Header */
+.headerbox {
     width: 100%;
     text-align: center;
     font-size: 50px;
@@ -56,126 +22,395 @@ body, html {
     color: rgba(255,255,255,0.95);
     font-weight: 700;
     letter-spacing: 8px;
-    }
-    
-    .infobox {
+}
+
+.logo {
+    color: rgba(255,255,255,0.95);
+    text-decoration: none;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background-color: rgba(15, 52, 96, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.knapp {
+    display: inline-block;
+    background-color: transparent;
+    color: rgba(255,255,255,0.85);
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.knapp:hover {
+    background-color: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+/* CTA Button */
+.cta-knapp {
+    display: inline-block;
+    background-color: #fff;
+    color: rgba(15, 52, 96, 1);
+    padding: 14px 36px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-knapp:hover {
+    background-color: rgba(255,255,255,0.85);
+    transform: translateY(-2px);
+}
+
+/* Background image sections */
+.bakgrundsbild1, .bakgrundsbild2, .bakgrundsbild3 {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bakgrundsbild1 {
+    background-image: url("Image1.jpg");
+    min-height: 500px;
+}
+
+.bakgrundsbild2 {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bakgrundsbild3 {
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0f3460 100%);
+    min-height: 400px;
+}
+
+/* Info overlays */
+.infobox {
     position: absolute;
     left: 0;
-    top: 35%;
+    top: 50%;
+    transform: translateY(-50%);
     width: 100%;
     text-align: center;
     color: rgba(255,255,255,0.95);
     padding: 0 20px;
-    }
-    
-    .infobox h1 {
+}
+
+.infobox h1 {
     font-size: 48px;
     margin: 0 0 15px 0;
     font-weight: 700;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    }
-    
-    .infobox h2 {
+}
+
+.infobox h2 {
     font-size: 36px;
     margin: 0 0 10px 0;
     font-weight: 600;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-    
-    .infobox p {
+}
+
+.infobox p {
     font-size: 24px;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-    
-    .infobox-gradient {
+}
+
+.infobox-gradient {
     width: 100%;
     text-align: center;
     color: rgba(255,255,255,1.00);
     padding: 40px 20px;
-    }
-    
-    .infobox-gradient h2 {
+}
+
+.infobox-gradient h2 {
     font-size: 48px;
     margin: 0 0 20px 0;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .infobox-gradient p {
+}
+
+.infobox-gradient p {
     font-size: 24px;
     margin: 0;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    }
-    
-    .textbox1 {
-    padding: 50px 200px;
+}
+
+/* Text sections */
+.textbox1 {
+    padding: 60px 200px;
     text-align: justify;
-    background-color:rgba(255,255,255,1.00);
+    background-color: #fff;
     border-top: 3px solid rgba(15, 52, 96, 0.3);
     border-bottom: 3px solid rgba(15, 52, 96, 0.3);
-    }
-    
-    .textbox1 h2 {
+}
+
+.textbox1 h2 {
     color: rgba(15, 52, 96, 1);
     margin-bottom: 25px;
-    }
-    
-    .textbox2 {
+    font-size: 28px;
+}
+
+.textbox1 p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.textbox2 {
     color: rgba(255,255,255,0.90);
-    padding: 50px 200px;
+    padding: 60px 200px;
     text-align: justify;
     background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
-    }
-    
-    .textbox2 h2 {
+}
+
+.textbox2 h2 {
     text-align: center;
     margin-bottom: 25px;
-    }
-    
-    .textbox3 {
+    font-size: 28px;
+}
+
+.textbox2 p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.textbox3 {
     color: rgba(255,255,255,0.90);
-    padding: 50px 200px;
+    padding: 60px 200px;
     text-align: justify;
     background-color: rgba(26, 26, 46, 1.00);
-    }
-    
-    .textbox3 h2 {
+}
+
+.textbox3 h2 {
     text-align: center;
     margin-bottom: 25px;
-    }
-    
-    @media only screen and (max-device-width: 1024px) {
-    .bakgrundsbild1, .bakgrundsbild2, .bakgrundsbild3 {
-    background-attachment: scroll;
-    }
-    
-    .textbox1, .textbox2, .textbox3 {
-    padding: 30px 30px;
-    }
-    
-    .headerbox {
-    font-size: 36px;
-    letter-spacing: 4px;
-    }
-    
-    .infobox h1 {
-    font-size: 32px;
-    }
-    
-    .infobox h2 {
     font-size: 28px;
+}
+
+.textbox3 p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Model cards */
+.modell-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.modell-kort {
+    background: #fff;
+    border: 1px solid rgba(15, 52, 96, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.modell-kort:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.modell-bild {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modell-kort h3 {
+    font-size: 22px;
+    color: rgba(15, 52, 96, 1);
+    margin: 20px 20px 5px;
+}
+
+.modell-typ {
+    font-size: 14px;
+    color: rgba(0,0,0,0.5);
+    margin: 0 20px 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.spec-lista {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0 0 15px;
+}
+
+.spec-lista li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 14px;
+    text-align: left;
+}
+
+.modell-beskrivning {
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 0 20px 25px;
+    margin: 0;
+    color: rgba(0,0,0,0.7);
+    text-align: left;
+}
+
+/* Footer */
+.footer {
+    background-color: #0a0a14;
+    color: rgba(255,255,255,0.80);
+    padding: 50px 40px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #fff;
+}
+
+.footer-col p {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+}
+
+/* Responsive */
+@media only screen and (max-width: 1024px) {
+    .bakgrundsbild1, .bakgrundsbild2, .bakgrundsbild3 {
+        background-attachment: scroll;
     }
-    
+
+    .textbox1, .textbox2, .textbox3 {
+        padding: 40px 30px;
+    }
+
+    .headerbox {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .infobox h1 {
+        font-size: 32px;
+    }
+
+    .infobox h2 {
+        font-size: 28px;
+    }
+
     .infobox p {
-    font-size: 18px;
+        font-size: 18px;
     }
-    
+
     .infobox-gradient h2 {
-    font-size: 32px;
+        font-size: 32px;
     }
-    
+
     .infobox-gradient p {
-    font-size: 18px;
+        font-size: 18px;
     }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 5px;
     }
+
+    .knapp {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .bakgrundsbild1, .bakgrundsbild3 {
+        min-height: 350px;
+    }
+
+    .infobox h1 {
+        font-size: 26px;
+    }
+
+    .infobox h2 {
+        font-size: 22px;
+    }
+
+    .infobox p {
+        font-size: 16px;
+    }
+
+    .headerbox {
+        font-size: 28px;
+        letter-spacing: 3px;
+        padding: 15px 0;
+    }
+
+    .cta-knapp {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+}
