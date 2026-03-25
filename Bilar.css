@@ -110,8 +110,8 @@ body, html {
     
     .textbox1 {
     padding: 50px 200px;
-    text-align: justify;
-    background-color:rgba(255,255,255,1.00);
+    text-align: center;
+    background-color:rgb(96, 112, 228);
     border-top: 3px solid rgba(15, 52, 96, 0.3);
     border-bottom: 3px solid rgba(15, 52, 96, 0.3);
     }
