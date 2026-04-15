@@ -1,181 +1,421 @@
+* {
+    box-sizing: border-box;
+}
+
 body, html {
-    height: 100vh;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: rgba(0,0,0,0.90);
+    padding: 0;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.90);
     font-size: 16px;
     line-height: 1.6;
-    }
+    background: #0f0f14;
+}
 
-    .knapp {
-        margin-top: 25px;
-        opacity: 0.6;
-        display: inline-block;
-        background-color: rgb(0, 0, 255);
-        color: white;
-        padding: 5px 10px;
-        text-decoration: none;
-        border-radius: 8px;
-      }      
-    
-    .bakgrundsbild1, .bakgrundsbild2, .bakgrundsbild3 {
+/* ---------- Header / Nav ---------- */
+.headerbox {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    background-color: rgba(15, 52, 96, 0.98);
+    color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    gap: 10px;
+}
+
+.knapp {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.knapp:hover,
+.knapp.aktiv {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+/* ---------- CTA buttons ---------- */
+.cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background-color: #fff;
+    color: rgba(15, 52, 96, 1);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.cta-light {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.cta-light:hover {
+    background-color: #fff;
+    color: rgba(15, 52, 96, 1);
+}
+
+/* ---------- Backgrounds ---------- */
+.bakgrundsbild1,
+.bakgrundsbild2,
+.bakgrundsbild3 {
     position: relative;
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    }
-    
-    .bakgrundsbild1 {
-    background-image: url("Bilbild.jpg");
-    min-height: 500px;
-    opacity: 0.80;
-    }
-    
-    .bakgrundsbild2 {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    min-height: 400px;
-    opacity: 1;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    }
-    
-    .bakgrundsbild3 {
-    background-image: url("bilder/relaxing.jpg");
+}
+
+.bakgrundsbild1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("Bilbild.jpg");
+    min-height: 600px;
+}
+
+.bakgrundsbild2 {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     min-height: 400px;
-    opacity: 0.75;
-    }
-    
-    .headerbox {
-    width: 100%;
+}
+
+.bakgrundsbild3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Bilbild2.png");
+    min-height: 420px;
+}
+
+/* ---------- Info overlays ---------- */
+.infobox {
     text-align: center;
-    font-size: 50px;
-    padding: 20px 0;
-    background-color: rgba(15, 52, 96, 1);
-    color: rgba(255,255,255,0.95);
-    font-weight: 700;
-    letter-spacing: 8px;
-    }
-    
-    .infobox {
-    position: absolute;
-    left: 0;
-    top: 35%;
-    width: 100%;
-    text-align: center;
-    color: rgba(255,255,255,0.95);
+    color: rgba(255, 255, 255, 0.98);
     padding: 0 20px;
-    }
-    
-    .infobox h1 {
-    font-size: 48px;
-    margin: 0 0 15px 0;
+    max-width: 900px;
+}
+
+.infobox h1 {
+    font-size: 56px;
+    margin: 0 0 18px 0;
     font-weight: 700;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    }
-    
-    .infobox h2 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    line-height: 1.1;
+}
+
+.infobox h2 {
     font-size: 36px;
-    margin: 0 0 10px 0;
+    margin: 0 0 14px 0;
     font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-    
-    .infobox p {
-    font-size: 24px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.infobox p {
+    font-size: 20px;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-    
-    .infobox-gradient {
-    width: 100%;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.infobox-gradient {
     text-align: center;
-    color: rgba(255,255,255,1.00);
+    color: #fff;
     padding: 40px 20px;
-    }
-    
-    .infobox-gradient h2 {
-    font-size: 48px;
-    margin: 0 0 20px 0;
+    max-width: 900px;
+}
+
+.infobox-gradient h2 {
+    font-size: 44px;
+    margin: 0 0 18px 0;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .infobox-gradient p {
-    font-size: 24px;
+}
+
+.infobox-gradient p {
+    font-size: 20px;
     margin: 0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    }
-    
-    .textbox1 {
-    padding: 50px 200px;
+}
+
+/* ---------- Text sections ---------- */
+.textbox1,
+.textbox2,
+.textbox3 {
+    padding: 70px 20px;
     text-align: center;
-    background-color:rgb(96, 112, 228);
-    border-top: 3px solid rgba(15, 52, 96, 0.3);
-    border-bottom: 3px solid rgba(15, 52, 96, 0.3);
-    }
-    
-    .textbox1 h2 {
+}
+
+.textbox1 {
+    background-color: #f4f6fb;
     color: rgba(15, 52, 96, 1);
-    margin-bottom: 25px;
-    }
-    
-    .textbox2 {
-    color: rgba(255,255,255,0.90);
-    padding: 50px 200px;
-    text-align: justify;
+}
+
+.textbox1 h1 {
+    font-size: 40px;
+    margin: 0 0 20px 0;
+}
+
+.textbox1 h2 {
+    font-size: 22px;
+    font-weight: 400;
+    max-width: 780px;
+    margin: 0 auto 30px auto;
+    line-height: 1.5;
+}
+
+.textbox2 {
+    color: rgba(255, 255, 255, 0.92);
     background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
-    }
-    
-    .textbox2 h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    }
-    
-    .textbox3 {
-    color: rgba(255,255,255,0.90);
-    padding: 50px 200px;
-    text-align: justify;
-    background-color: rgba(26, 26, 46, 1.00);
-    }
-    
-    .textbox3 h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    }
-    
-    @media only screen and (max-device-width: 1024px) {
-    .bakgrundsbild1, .bakgrundsbild2, .bakgrundsbild3 {
-    background-attachment: scroll;
-    }
-    
-    .textbox1, .textbox2, .textbox3 {
-    padding: 30px 30px;
-    }
-    
-    .headerbox {
+}
+
+.textbox3 {
+    color: rgba(255, 255, 255, 0.92);
+    background-color: #1a1a2e;
+}
+
+.textbox2 h2,
+.textbox3 h2 {
     font-size: 36px;
-    letter-spacing: 4px;
+    margin: 0 0 24px 0;
+}
+
+.textbox2 p,
+.textbox3 p {
+    max-width: 780px;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+/* ---------- Page hero (modeller) ---------- */
+.page-hero {
+    padding: 80px 20px 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    color: #fff;
+}
+
+.page-hero h1 {
+    font-size: 48px;
+    margin: 0 0 12px 0;
+}
+
+.page-hero p {
+    font-size: 18px;
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* ---------- Model grid ---------- */
+.modell-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 60px 40px;
+    background: #f4f6fb;
+}
+
+.modell-kort {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.modell-kort:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.modell-bild {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.modell-info {
+    padding: 24px;
+    color: rgba(15, 52, 96, 1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.modell-info h2 {
+    margin: 0 0 6px 0;
+    font-size: 26px;
+}
+
+.modell-tagline {
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+    margin: 0 0 18px 0;
+}
+
+.specs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.specs li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.specs li:last-child {
+    border-bottom: none;
+}
+
+.pris {
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 18px;
+    color: rgba(15, 52, 96, 1);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    background-color: #0a0a14;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 50px 40px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 30px auto;
+}
+
+.footer-col h3 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 0 12px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-col p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.5;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media only screen and (max-width: 1024px) {
+    .bakgrundsbild1,
+    .bakgrundsbild2,
+    .bakgrundsbild3 {
+        background-attachment: scroll;
     }
-    
+
+    .textbox1,
+    .textbox2,
+    .textbox3 {
+        padding: 50px 24px;
+    }
+
     .infobox h1 {
-    font-size: 32px;
+        font-size: 38px;
     }
-    
+
     .infobox h2 {
-    font-size: 28px;
+        font-size: 28px;
     }
-    
+
     .infobox p {
-    font-size: 18px;
+        font-size: 17px;
     }
-    
+
     .infobox-gradient h2 {
-    font-size: 32px;
+        font-size: 32px;
     }
-    
+
     .infobox-gradient p {
-    font-size: 18px;
+        font-size: 17px;
     }
+
+    .modell-grid {
+        padding: 40px 20px;
     }
+}
+
+@media only screen and (max-width: 640px) {
+    .headerbox {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 20px;
+    }
+
+    .logo {
+        font-size: 26px;
+        letter-spacing: 4px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .infobox h1 {
+        font-size: 30px;
+    }
+
+    .page-hero h1 {
+        font-size: 34px;
+    }
+
+    .textbox1 h1 {
+        font-size: 30px;
+    }
+
+    .textbox2 h2,
+    .textbox3 h2 {
+        font-size: 26px;
+    }
+}
